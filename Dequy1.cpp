@@ -37,6 +37,7 @@ int logarit(int n){
 		else
 			return 0;
 }
+//Tich le~ cua mot so nguyen
 int tichle(int n,int x){
 	if(n<0)
 		return 0;
@@ -47,7 +48,16 @@ int tichle(int n,int x){
 			x=x*n%10;
 	 tichle(n/10,x);
 }
+//doi thap phan sang nhi phan
+int bit(int n){
+	int du,tg;
+	if(n==0)
+		return 0;
+	else
+		return bit(n/2)*10+n%2;
+	
+}
 main(){
-	printf("%d",tichle(323,1));
+	printf("%d",bit(4));
 }
 

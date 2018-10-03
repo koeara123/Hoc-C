@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<math.h>
+//so Nguyen to la so chi chia het cho 1 va chinh no
 int soNT(int n){
 	int i;
 	for(i=2;i<=sqrt(n);i++){

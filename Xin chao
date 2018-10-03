@@ -1,0 +1,281 @@
+[33mcommit 6981659a45f9b1b938b7a02ef82e00ccdc42474f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: lân <vitliti97@gmail.com>
+Date:   Wed Sep 12 00:09:29 2018 +0700
+
+    Mot so bai tap de quy va khac
+
+[1mdiff --git a/Bai6.cpp b/Bai6.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..70daf6c[m
+[1m--- /dev/null[m
+[1m+++ b/Bai6.cpp[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32m#define MAX 10[m
+[32m+[m[32mvoid tongSN(int a){[m
+[32m+[m	[32mint i,du;[m
+[32m+[m	[32mint b[MAX];[m
+[32m+[m	[32mint dem=0;[m
+[32m+[m	[32mwhile(a!=0){[m
+[32m+[m		[32mdu=a%10;[m
+[32m+[m		[32mb[dem++]=du;[m
+[32m+[m		[32ma=a/10;[m
+[32m+[m	[32m}[m
+[32m+[m	[32mfor(i=1;i<dem;i++)[m
+[32m+[m		[32mb[0]=b[0]+b[i];[m[41m	[m
+[32m+[m	[32mprintf("co %d so va tong la: %d",dem,b[0]);[m
+[32m+[m[32m}[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mint a;[m
+[32m+[m	[32mprintf("Nhap a: ");[m
+[32m+[m	[32mscanf("%d",&a);[m
+[32m+[m	[32mtongSN(a);[m
+[32m+[m[32m}[m
+[1mdiff --git a/Bai6.exe b/Bai6.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f27bdd0[m
+Binary files /dev/null and b/Bai6.exe differ
+[1mdiff --git a/Bai8.cpp b/Bai8.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c5fa7e0[m
+[1m--- /dev/null[m
+[1m+++ b/Bai8.cpp[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32m#include<conio.h>[m
+[32m+[m[32m#include<math.h>[m
+[32m+[m[32mvoid bai8(int *x,int *y){[m
+[32m+[m	[32mfloat UCLN,BCNN;[m
+[32m+[m	[32mint a=abs(*x);[m
+[32m+[m	[32mint b=abs(*y);[m
+[32m+[m	[32mwhile(a!=b && a*b!=0){[m
+[32m+[m		[32mif(a>b)[m
+[32m+[m			[32ma-=b;[m
+[32m+[m		[32melse[m
+[32m+[m			[32mb-=a;[m
+[32m+[m	[32m}[m
+[32m+[m	[32mif(a*b==0){[m
+[32m+[m		[32mUCLN=a+b; BCNN=abs((*x) * (*y))/(a+b);[m
+[32m+[m	[32m}[m[41m	[m
+[32m+[m	[32melse[m
+[32m+[m		[32mUCLN=a;BCNN=abs((*x) * (*y))/a;[m
+[32m+[m	[32mprintf("UCLN =%.3f,BCNN=%0.3f ",UCLN,BCNN);[m
+[32m+[m[32m}[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mint x,y;[m
+[32m+[m	[32mprintf("Moi nhap x va y: ");[m
+[32m+[m	[32mscanf("%d%d",&x,&y);[m
+[32m+[m	[32mbai8(&x,&y);[m
+[32m+[m[32m}[m
+[1mdiff --git a/Bai8.exe b/Bai8.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..78f4c69[m
+Binary files /dev/null and b/Bai8.exe differ
+[1mdiff --git a/Dequy1.cpp b/Dequy1.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7f44a2a[m
+[1m--- /dev/null[m
+[1m+++ b/Dequy1.cpp[m
+[36m@@ -0,0 +1,53 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32m//de quy dao nguoc cac so nguyen duong;[m
+[32m+[m[32mint  dao(int n){[m
+[32m+[m	[32mif(n!=0){[m
+[32m+[m		[32mprintf("%d",n%10);[m
+[32m+[m		[32mdao(n/10);[m
+[32m+[m	[32m}[m
+[32m+[m[32m}[m
+[32m+[m[32m//dem so luon so nguyen duong[m
+[32m+[m[32mint dem(int n){[m
+[32m+[m	[32mif(n==0)[m
+[32m+[m		[32mreturn 0;[m
+[32m+[m	[32mif(n!=0){[m
+[32m+[m		[32mreturn dem(n/10)+1;[m
+[32m+[m	[32m}[m
+[32m+[m[32m}[m
+[32m+[m[32m//tim gtln[m
+[32m+[m[32mint gtln(int n,int max){[m
+[32m+[m	[32mint m=n%10;[m
+[32m+[m	[32mif(n==0)[m
+[32m+[m		[32mreturn max;[m
+[32m+[m	[32mif(n!=0){[m
+[32m+[m		[32mif(m>max){[m
+[32m+[m			[32mmax=m;[m
+[32m+[m		[32m}[m
+[32m+[m		[32mgtln(n/10,max);[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[32m}[m
+[32m+[m[32m//logarit co so 2 cua n[m
+[32m+[m[32mint logarit(int n){[m
+[32m+[m	[32mif(n<0)[m
+[32m+[m		[32mreturn -1;[m
+[32m+[m	[32melse[m
+[32m+[m		[32mif(n>=2)[m
+[32m+[m			[32mreturn 1 + logarit(n/2);[m
+[32m+[m		[32melse[m
+[32m+[m			[32mreturn 0;[m
+[32m+[m[32m}[m
+[32m+[m[32mint tichle(int n,int x){[m
+[32m+[m	[32mif(n<0)[m
+[32m+[m		[32mreturn 0;[m
+[32m+[m	[32mif(n==0)[m
+[32m+[m		[32mreturn x;[m
+[32m+[m	[32mif(n!=0)[m
+[32m+[m		[32mif(n%10%2==1)[m
+[32m+[m			[32mx=x*n%10;[m
+[32m+[m	[32m tichle(n/10,x);[m
+[32m+[m[32m}[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mprintf("%d",tichle(323,1));[m
+[32m+[m[32m}[m
+[32m+[m
+[1mdiff --git a/Dequy1.exe b/Dequy1.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6201107[m
+Binary files /dev/null and b/Dequy1.exe differ
+[1mdiff --git a/TongCacSo.cpp b/TongCacSo.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8e7fb3c[m
+[1m--- /dev/null[m
+[1m+++ b/TongCacSo.cpp[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32mint tong(int n)[m
+[32m+[m[32m{[m
+[32m+[m	[32mint dv,tong=0;[m
+[32m+[m	[32mif(n)[m
+[32m+[m		[32mreturn 1;[m
+[32m+[m	[32mreturn 2;[m
+[32m+[m[32m}[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mprintf("%d",tong(0));[m
+[32m+[m[41m	[m
+[32m+[m[32m}[m
+[1mdiff --git a/TongCacSo.exe b/TongCacSo.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1c53a49[m
+Binary files /dev/null and b/TongCacSo.exe differ
+[1mdiff --git a/bai 12.cpp b/bai 12.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..734555d[m
+[1m--- /dev/null[m
+[1m+++ b/bai 12.cpp[m	
+[36m@@ -0,0 +1,20 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32mint fibo(int i){[m
+[32m+[m	[32mint t=0;[m
+[32m+[m	[32mint s=1;[m
+[32m+[m	[32mint tg,j;[m
+[32m+[m	[32mfor(j=2;j<=i;j++){[m
+[32m+[m		[32mtg=t+s;[m
+[32m+[m		[32mt=s;[m
+[32m+[m		[32ms=tg;[m
+[32m+[m	[32m}[m
+[32m+[m	[32mreturn s;[m
+[32m+[m[32m}[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mint n;[m
+[32m+[m	[32mprintf("Nhap n: ");[m
+[32m+[m	[32mscanf("%d",&n);[m
+[32m+[m	[32mint i;[m
+[32m+[m	[32mfor(i=1;i<=n;i++)[m
+[32m+[m		[32mprintf("%d,",fibo(i));[m
+[32m+[m[32m}[m
+[1mdiff --git a/bai 12.exe b/bai 12.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..735342b[m
+Binary files /dev/null and b/bai 12.exe differ
+[1mdiff --git a/bai5.cpp b/bai5.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9b71a1e[m
+[1m--- /dev/null[m
+[1m+++ b/bai5.cpp[m
+[36m@@ -0,0 +1,20 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32m#define  max 10[m
+[32m+[m[32mvoid daoNguoc(int a){[m
+[32m+[m	[32mint i,du;[m
+[32m+[m	[32mint b[max];[m
+[32m+[m	[32mint dem=0;[m
+[32m+[m	[32mwhile(a!=0){[m
+[32m+[m		[32mdu=a%10;[m
+[32m+[m		[32mb[dem++]=du;[m
+[32m+[m		[32ma=a/10;[m
+[32m+[m	[32m}[m[41m	[m
+[32m+[m	[32mfor(i=0;i<dem;i++)[m
+[32m+[m		[32mprintf("%d",b[i]);[m
+[32m+[m[32m}[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mint a;[m
+[32m+[m	[32mprintf("Nhap a: ");[m
+[32m+[m	[32mscanf("%d",&a);[m
+[32m+[m	[32mdaoNguoc(a);[m
+[32m+[m[32m}[m
+[1mdiff --git a/bai5.exe b/bai5.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..87f0a50[m
+Binary files /dev/null and b/bai5.exe differ
+[1mdiff --git a/bai7.cpp b/bai7.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..17c3986[m
+[1m--- /dev/null[m
+[1m+++ b/bai7.cpp[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32m#define  max 10[m
+[32m+[m[32mfloat tbc(int a){[m
+[32m+[m	[32mint i,du;[m
+[32m+[m	[32mint tong=0;[m
+[32m+[m	[32mint dem=0;[m
+[32m+[m	[32mwhile(a!=0){[m
+[32m+[m		[32mdu=a%10;[m
+[32m+[m		[32ma=a/10;[m
+[32m+[m		[32mtong=+du;[m
+[32m+[m		[32mdem++;[m
+[32m+[m	[32m}[m[41m	[m
+[32m+[m	[32mreturn tong*1.0/dem;[m
+[32m+[m[32m}[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mint a;[m
+[32m+[m	[32mprintf("Nhap a: ");[m
+[32m+[m	[32mscanf("%d",&a);[m
+[32m+[m	[32mfloat b=tbc(a);[m
+[32m+[m	[32mprintf("tbc=%0.2f",b);[m
+[32m+[m[32m}[m
+[1mdiff --git a/bai7.exe b/bai7.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..94a1ef5[m
+Binary files /dev/null and b/bai7.exe differ
+[1mdiff --git a/baitap4.cpp b/baitap4.cpp[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b1031d5[m
+[1m--- /dev/null[m
+[1m+++ b/baitap4.cpp[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32m#include<stdio.h>[m
+[32m+[m[32m#include<math.h>[m
+[32m+[m[32mint soNT(int n){[m
+[32m+[m	[32mint i;[m
+[32m+[m	[32mfor(i=2;i<=sqrt(n);i++){[m
+[32m+[m		[32mif(n%i==0)[m
+[32m+[m			[32mreturn 0;[m[41m		[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32mreturn 1;[m
+[32m+[m[41m		[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mmain(){[m
+[32m+[m	[32mint a;[m
+[32m+[m	[32mprintf("Nhap a: ");[m
+[32m+[m	[32mscanf("%d",&a);[m
+[32m+[m	[32mif(soNT(a)==1)[m
+[32m+[m		[32mprintf("Day la so NT");[m
+[32m+[m	[32melse[m[41m [m
+[32m+[m		[32mprintf("Khong pha la so NT");[m
+[32m+[m[32m}[m
+[1mdiff --git a/baitap4.exe b/baitap4.exe[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2e6a027[m
+Binary files /dev/null and b/baitap4.exe differ

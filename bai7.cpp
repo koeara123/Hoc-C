@@ -7,7 +7,7 @@ float tbc(int a){
 	while(a!=0){
 		du=a%10;
 		a=a/10;
-		tong=+du;
+		tong+=du;
 		dem++;
 	}	
 	return tong*1.0/dem;
@@ -17,5 +17,5 @@ main(){
 	printf("Nhap a: ");
 	scanf("%d",&a);
 	float b=tbc(a);
-	printf("tbc=%0.2f",b);
+	printf("tbc=%f",b);
 }
